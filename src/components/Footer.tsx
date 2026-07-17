@@ -18,7 +18,7 @@ export default function Footer() {
                 />
               </div>
               <span className="brand-wordmark text-white text-base">
-                LANGRATIA
+                {"LΛNGRΛT\\Λ"}
               </span>
             </div>
             <p className="text-sm leading-relaxed text-cloud-gray/70">

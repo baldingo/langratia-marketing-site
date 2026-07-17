@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Creators", href: "/creators" },
   { label: "SMB", href: "/smb" },
   { label: "Enterprise", href: "/enterprise" },
+  { label: "ROI Tool", href: "/roi" },
   { label: "Case Studies", href: "/case-studies" },
 ];
 
@@ -33,7 +34,7 @@ export default function Header() {
             />
           </div>
           <span className="brand-wordmark text-white text-lg tracking-widest">
-            LANGRATIA
+            {"LΛNGRΛT\\Λ"}
           </span>
         </Link>
 

@@ -66,6 +66,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-brand), 'Inter', 'Segoe UI', sans-serif;
+}
+
 /* ============================================================
    GLOBAL COMPONENT RULES
    90-degree sharp corners are FORBIDDEN per brand guide.
