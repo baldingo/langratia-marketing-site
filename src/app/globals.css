@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* ============================================================
+   LANGRATIA DESIGN SYSTEM
+   Brand tokens, gradients, typography, and global rules
+   ============================================================ */
+
+:root {
+  /* — Brand Colors — */
+  --primary-purple: #4F46E5;
+  --electric-indigo: #6366F1;
+  --sky-cyan: #38BDF8;
+  --dark-navy: #0F172A;
+  --cloud-gray: #E2E8F0;
+  --deep-cyan: #0284C7;
+
+  /* — Functional Gradients — */
+  --gradient-action: linear-gradient(135deg, var(--primary-purple), var(--electric-indigo));
+  --gradient-data: linear-gradient(135deg, var(--sky-cyan), var(--deep-cyan));
+  --gradient-depth: linear-gradient(135deg, #FFFFFF, var(--cloud-gray));
+
+  /* — Brand Radii — */
+  --radius-brand: 12px;
+  --radius-brand-lg: 16px;
+
+  /* — Backgrounds — */
+  --background: #FFFFFF;
+  --foreground: var(--dark-navy);
+}
+
+/* — Tailwind v4 Theme Extension — */
+@theme inline {
+  /* Colors */
+  --color-primary-purple: var(--primary-purple);
+  --color-electric-indigo: var(--electric-indigo);
+  --color-sky-cyan: var(--sky-cyan);
+  --color-dark-navy: var(--dark-navy);
+  --color-cloud-gray: var(--cloud-gray);
+  --color-deep-cyan: var(--deep-cyan);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Border Radius */
+  --radius-brand: 12px;
+  --radius-brand-lg: 16px;
+
+  /* Fonts */
+  --font-body: var(--font-nunito);
+  --font-brand: var(--font-montserrat);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================================
+   GLOBAL COMPONENT RULES
+   90-degree sharp corners are FORBIDDEN per brand guide.
+   ============================================================ */
+
+button,
+[role="button"],
+input,
+select,
+textarea {
+  border-radius: var(--radius-brand);
+}
+
+/* ============================================================
+   GRADIENT UTILITIES
+   ============================================================ */
+
+.gradient-action {
+  background: var(--gradient-action);
+}
+
+.gradient-data {
+  background: var(--gradient-data);
+}
+
+.gradient-depth {
+  background: var(--gradient-depth);
+}
+
+/* ============================================================
+   BRAND WORDMARK UTILITY
+   For the LANGRATIA text rendered in Montserrat (bold, tracked)
+   ============================================================ */
+
+.brand-wordmark {
+  font-family: var(--font-brand), 'Inter', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   LINK STYLES
+   ============================================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+/* ============================================================
+   SELECTION HIGHLIGHT (brand purple)
+   ============================================================ */
+
+::selection {
+  background: var(--primary-purple);
+  color: #FFFFFF;
+}
