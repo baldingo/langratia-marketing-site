@@ -19,9 +19,9 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
-          <div className="flex flex-col items-center text-center gap-8">
-            {/* Logo mark */}
-            <div className="relative w-20 h-20 mb-2 animate-pulse">
+          <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto px-6 pt-20 pb-32">
+            {/* Central Logo Node */}
+            <div className="relative w-20 h-20 mb-8 rounded-2xl overflow-hidden shadow-2xl shadow-primary-purple/20">
               <Image
                 src="/logo.png"
                 alt="Langratia node icon"
@@ -34,7 +34,7 @@ export default function Home() {
             {/* Main headline */}
             <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
               Custom Software Built for{" "}
-              <span className="bg-gradient-to-r from-primary-purple via-electric-indigo to-sky-cyan bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#818CF8] via-[#A78BFA] to-sky-cyan bg-clip-text text-transparent drop-shadow-sm">
                 Your Exact Scale
               </span>
             </h1>

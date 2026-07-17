@@ -21,7 +21,7 @@ export default function CreatorsPage() {
             </p>
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight mb-6">
               From Vision to{" "}
-              <span className="bg-gradient-to-r from-primary-purple to-electric-indigo bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#818CF8] to-[#C084FC] bg-clip-text text-transparent drop-shadow-sm">
                 Live Product
               </span>{" "}
               in 14 Days

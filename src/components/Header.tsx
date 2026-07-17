@@ -24,7 +24,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo & Brand Name */}
         <Link href="/" className="flex items-center gap-3 group" id="brand-link">
-          <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-110">
+          <div className="relative w-10 h-10 rounded-xl overflow-hidden transition-transform duration-300 group-hover:scale-110">
             <Image
               src="/logo.png"
               alt="Langratia logo"

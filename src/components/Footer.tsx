@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4 max-w-xs">
             <div className="flex items-center gap-3">
-              <div className="relative w-8 h-8">
+              <div className="relative w-8 h-8 rounded-xl overflow-hidden">
                 <Image
                   src="/logo.png"
                   alt="Langratia logo"

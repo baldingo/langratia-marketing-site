@@ -57,7 +57,7 @@ export default function SMBPage() {
             </p>
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight mb-6">
               Systems That Scale{" "}
-              <span className="bg-gradient-to-r from-sky-cyan to-deep-cyan bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#BAE6FD] to-[#38BDF8] bg-clip-text text-transparent drop-shadow-sm">
                 With Your Business
               </span>
             </h1>
