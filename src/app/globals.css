@@ -6,18 +6,19 @@
    ============================================================ */
 
 :root {
-  /* — Brand Colors — */
-  --primary-purple: #4F46E5;
-  --electric-indigo: #6366F1;
-  --sky-cyan: #38BDF8;
+  /* — Brand Colors — pulled directly from the Langratia logo */
+  --primary-purple: #6855F0;     /* purple arm of the pinwheel */
+  --electric-indigo: #8B74F8;    /* lighter violet accent */
+  --sky-cyan: #29B5F6;           /* cyan/blue arm of the pinwheel */
   --dark-navy: #0F172A;
   --cloud-gray: #E2E8F0;
-  --deep-cyan: #0284C7;
+  --deep-cyan: #0EA5E9;          /* deeper sky blue */
 
   /* — Functional Gradients — */
-  --gradient-action: linear-gradient(135deg, var(--primary-purple), var(--electric-indigo));
+  --gradient-action: linear-gradient(135deg, var(--primary-purple), var(--sky-cyan));
   --gradient-data: linear-gradient(135deg, var(--sky-cyan), var(--deep-cyan));
   --gradient-depth: linear-gradient(135deg, #FFFFFF, var(--cloud-gray));
+  --gradient-brand: linear-gradient(135deg, var(--primary-purple), var(--electric-indigo), var(--sky-cyan));
 
   /* — Brand Radii — */
   --radius-brand: 12px;
@@ -29,14 +30,14 @@
 }
 
 /* — Tailwind v4 Theme Extension — */
-@theme inline {
-  /* Colors */
-  --color-primary-purple: #4F46E5;
-  --color-electric-indigo: #6366F1;
-  --color-sky-cyan: #38BDF8;
+@theme {
+  /* Colors — matched to logo palette */
+  --color-primary-purple: #6855F0;
+  --color-electric-indigo: #8B74F8;
+  --color-sky-cyan: #29B5F6;
   --color-dark-navy: #0F172A;
   --color-cloud-gray: #E2E8F0;
-  --color-deep-cyan: #0284C7;
+  --color-deep-cyan: #0EA5E9;
   --color-background: #FFFFFF;
   --color-foreground: #0F172A;
 
@@ -123,6 +124,29 @@ a {
 a:hover {
   opacity: 0.85;
   transition: opacity 0.2s ease;
+}
+
+/* Header link hover — brand purple */
+#main-header a:hover {
+  color: #6855F0;
+  opacity: 1;
+}
+
+/* ============================================================
+   FOOTER — Force white text on dark background
+   ============================================================ */
+
+#main-footer,
+#main-footer a,
+#main-footer p,
+#main-footer span,
+#main-footer h4 {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#main-footer a:hover {
+  color: #ffffff;
+  opacity: 1;
 }
 
 /* ============================================================

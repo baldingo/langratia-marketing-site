@@ -6,58 +6,88 @@ export default function Home() {
     <>
       {/* ============================================================
           HERO SECTION
-          Premium dark hero with brand tagline and subtle gradient
+          Light background — logo colours own the page
           ============================================================ */}
       <section
-        className="relative overflow-hidden bg-dark-navy"
+        className="relative overflow-hidden bg-white"
         id="hero-section"
       >
-        {/* Background glow effects */}
+        {/* Ambient brand glows — purple left, cyan right */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-primary-purple/10 blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-sky-cyan/8 blur-3xl" />
+          <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-[#6855F0]/12 blur-[120px]" />
+          <div className="absolute -bottom-32 -right-32 w-[600px] h-[600px] rounded-full bg-[#29B5F6]/12 blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#8B74F8]/6 blur-[80px]" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
-          <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto px-6 pt-20 pb-32">
-            {/* Central Logo Node */}
-            <div className="relative w-20 h-20 mb-8 rounded-2xl overflow-hidden shadow-2xl shadow-primary-purple/20">
+        {/* Subtle grid overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#6855F0 1px, transparent 1px), linear-gradient(to right, #6855F0 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-center text-center max-w-5xl mx-auto px-6 pt-28 pb-28">
+            {/* Logo — large and proud on the light background */}
+            <div className="relative w-28 h-28 mb-8 drop-shadow-2xl">
               <Image
                 src="/logo.png"
-                alt="Langratia node icon"
+                alt="Langratia logo"
                 fill
-                className="object-contain drop-shadow-2xl"
+                className="object-contain"
                 priority
               />
             </div>
 
+            {/* Badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#6855F0]/20 bg-[#6855F0]/6 px-4 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#6855F0] animate-pulse" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#6855F0]">
+                Premium Software Engineering
+              </span>
+            </div>
+
             {/* Main headline */}
-            <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
+            <h1 className="max-w-4xl text-5xl font-extrabold tracking-tight text-[#0F172A] sm:text-6xl lg:text-7xl leading-tight">
               Custom Software Built for{" "}
-              <span className="bg-gradient-to-r from-[#818CF8] via-[#A78BFA] to-sky-cyan bg-clip-text text-transparent drop-shadow-sm">
+              <span
+                className="bg-clip-text text-transparent"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, #6855F0 0%, #8B74F8 50%, #29B5F6 100%)",
+                }}
+              >
                 Your Exact Scale
               </span>
             </h1>
 
             {/* Subheadline */}
-            <p className="max-w-2xl text-lg leading-relaxed text-cloud-gray/80 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#0F172A]/60 sm:text-xl">
               Enterprise-grade architecture with the agility of a startup. We
               deliver precision-engineered software systems that eliminate
               technical debt and accelerate your time-to-market by 70%.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <Link
                 href="/contact"
-                className="gradient-action rounded-brand-lg px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:shadow-primary-purple/30 hover:scale-[1.03] text-center"
+                className="rounded-[12px] px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:shadow-xl hover:scale-[1.03] text-center"
                 id="hero-cta-primary"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #6855F0 0%, #29B5F6 100%)",
+                  boxShadow: "0 8px 32px rgba(104,85,240,0.3)",
+                }}
               >
                 Start Your Project
               </Link>
               <Link
                 href="/case-studies"
-                className="rounded-brand-lg border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/25 text-center"
+                className="rounded-[12px] border-2 border-[#6855F0]/25 bg-[#6855F0]/5 px-8 py-4 text-base font-semibold text-[#6855F0] transition-all duration-300 hover:bg-[#6855F0]/10 hover:border-[#6855F0]/40 text-center"
                 id="hero-cta-secondary"
               >
                 View Our Work
@@ -65,45 +95,46 @@ export default function Home() {
             </div>
 
             {/* Trust metrics */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-sm text-cloud-gray/50">
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-[#0F172A]/50">
               <div className="flex items-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-primary-purple" />
+                <span className="inline-block w-2 h-2 rounded-full bg-[#6855F0]" />
                 <span>3x Higher Productivity</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-electric-indigo" />
+                <span className="inline-block w-2 h-2 rounded-full bg-[#8B74F8]" />
                 <span>6x Fewer Defects</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-sky-cyan" />
+                <span className="inline-block w-2 h-2 rounded-full bg-[#29B5F6]" />
                 <span>70% Faster Delivery</span>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* ============================================================
           THREE-TIER SELF-SELECTION MATRIX
-          The Switchboard — route users to the right pipeline
+          Soft lavender background — keeps the brand colour alive
           ============================================================ */}
       <section
-        className="bg-white py-20 sm:py-28"
+        className="py-20 sm:py-28"
         id="tier-selection"
+        style={{
+          background:
+            "linear-gradient(180deg, #F5F3FF 0%, #EFF9FF 100%)",
+        }}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Section header */}
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary-purple mb-3">
+            <p className="text-sm font-semibold uppercase tracking-widest text-[#6855F0] mb-3">
               Choose Your Path
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-dark-navy sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl">
               Three Tiers. One Standard of Excellence.
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-dark-navy/60 leading-relaxed">
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-[#0F172A]/55 leading-relaxed">
               Whether you&apos;re launching an MVP, scaling operations, or
               building enterprise infrastructure — we have a delivery model
               engineered for your exact complexity.
@@ -112,15 +143,21 @@ export default function Home() {
 
           {/* Three cards */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {/* Creator Card — Action Gradient */}
+            {/* Creator Card */}
             <Link
               href="/creators"
-              className="group relative flex flex-col rounded-brand-lg overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary-purple/15"
+              className="group relative flex flex-col rounded-[16px] overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               id="tier-card-creator"
+              style={{ boxShadow: "0 4px 24px rgba(104,85,240,0.12)" }}
             >
-              <div className="gradient-action p-8 flex flex-col gap-5 flex-1">
-                {/* Icon */}
-                <div className="w-12 h-12 rounded-brand bg-white/15 flex items-center justify-center backdrop-blur-sm">
+              <div
+                className="p-8 flex flex-col gap-5 flex-1"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #6855F0 0%, #29B5F6 100%)",
+                }}
+              >
+                <div className="w-12 h-12 rounded-[12px] bg-white/20 flex items-center justify-center backdrop-blur-sm">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -135,18 +172,15 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-
                 <h3 className="text-2xl font-bold text-white">
                   Creator Launchpad
                 </h3>
-                <p className="text-white/80 leading-relaxed flex-1">
+                <p className="text-white/85 leading-relaxed flex-1">
                   From vision to live product in 14 days. A high-velocity MVP
                   service designed for founders who need to validate fast and
                   build smart.
                 </p>
-
-                {/* Bottom indicator */}
-                <div className="flex items-center gap-2 text-white/60 text-sm font-medium group-hover:text-white transition-colors duration-300">
+                <div className="flex items-center gap-2 text-white/70 text-sm font-medium group-hover:text-white transition-colors duration-300">
                   <span>Launch your MVP</span>
                   <svg
                     className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -165,15 +199,21 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* SMB Card — Data Gradient */}
+            {/* SMB Card */}
             <Link
               href="/smb"
-              className="group relative flex flex-col rounded-brand-lg overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky-cyan/15"
+              className="group relative flex flex-col rounded-[16px] overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               id="tier-card-smb"
+              style={{ boxShadow: "0 4px 24px rgba(41,181,246,0.12)" }}
             >
-              <div className="gradient-data p-8 flex flex-col gap-5 flex-1">
-                {/* Icon */}
-                <div className="w-12 h-12 rounded-brand bg-white/15 flex items-center justify-center backdrop-blur-sm">
+              <div
+                className="p-8 flex flex-col gap-5 flex-1"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #29B5F6 0%, #6855F0 100%)",
+                }}
+              >
+                <div className="w-12 h-12 rounded-[12px] bg-white/20 flex items-center justify-center backdrop-blur-sm">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -188,18 +228,15 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-
                 <h3 className="text-2xl font-bold text-white">
                   SMB Systems Hub
                 </h3>
-                <p className="text-white/80 leading-relaxed flex-1">
+                <p className="text-white/85 leading-relaxed flex-1">
                   Custom digital systems for businesses scaling from 10 to 100
                   employees. E-commerce platforms, inventory trackers, and
                   mobile integrations built on predictable frameworks.
                 </p>
-
-                {/* Bottom indicator */}
-                <div className="flex items-center gap-2 text-white/60 text-sm font-medium group-hover:text-white transition-colors duration-300">
+                <div className="flex items-center gap-2 text-white/70 text-sm font-medium group-hover:text-white transition-colors duration-300">
                   <span>Scale your systems</span>
                   <svg
                     className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -218,17 +255,25 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Enterprise Card — Depth Gradient (Premium metal plate) */}
+            {/* Enterprise Card */}
             <Link
               href="/enterprise"
-              className="group relative flex flex-col rounded-brand-lg overflow-hidden border border-cloud-gray/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-dark-navy/10"
+              className="group relative flex flex-col rounded-[16px] overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               id="tier-card-enterprise"
+              style={{
+                boxShadow: "0 4px 24px rgba(104,85,240,0.08)",
+                border: "2px solid #E0D9FF",
+              }}
             >
-              <div className="gradient-depth p-8 flex flex-col gap-5 flex-1">
-                {/* Icon */}
-                <div className="w-12 h-12 rounded-brand bg-dark-navy/8 flex items-center justify-center">
+              <div
+                className="p-8 flex flex-col gap-5 flex-1"
+                style={{
+                  background: "linear-gradient(135deg, #FFFFFF 0%, #F5F3FF 100%)",
+                }}
+              >
+                <div className="w-12 h-12 rounded-[12px] bg-[#6855F0]/10 flex items-center justify-center">
                   <svg
-                    className="w-6 h-6 text-dark-navy"
+                    className="w-6 h-6 text-[#6855F0]"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
@@ -241,18 +286,15 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-
-                <h3 className="text-2xl font-bold text-dark-navy">
+                <h3 className="text-2xl font-bold text-[#0F172A]">
                   Enterprise Gateway
                 </h3>
-                <p className="text-dark-navy/65 leading-relaxed flex-1">
+                <p className="text-[#0F172A]/60 leading-relaxed flex-1">
                   Dedicated engineering capacity for institutions requiring
                   long-term stability, total data control, and deep
                   integration with SOC 2 and ISO 27001 compliance.
                 </p>
-
-                {/* Bottom indicator */}
-                <div className="flex items-center gap-2 text-dark-navy/40 text-sm font-medium group-hover:text-dark-navy transition-colors duration-300">
+                <div className="flex items-center gap-2 text-[#6855F0]/60 text-sm font-medium group-hover:text-[#6855F0] transition-colors duration-300">
                   <span>Request capacity review</span>
                   <svg
                     className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -276,16 +318,23 @@ export default function Home() {
 
       {/* ============================================================
           VALUE PROPOSITION STRIP
-          Reinforce core differentiators
+          Brand gradient background — vibrant, not black
           ============================================================ */}
-      <section className="bg-dark-navy py-16" id="value-strip">
+      <section
+        className="py-16"
+        id="value-strip"
+        style={{
+          background:
+            "linear-gradient(135deg, #6855F0 0%, #8B74F8 50%, #29B5F6 100%)",
+        }}
+      >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
             {/* Value 1 */}
             <div className="flex flex-col gap-3 text-center md:text-left">
-              <div className="mx-auto md:mx-0 w-10 h-10 rounded-brand bg-primary-purple/15 flex items-center justify-center">
+              <div className="mx-auto md:mx-0 w-10 h-10 rounded-[12px] bg-white/20 flex items-center justify-center">
                 <svg
-                  className="w-5 h-5 text-primary-purple"
+                  className="w-5 h-5 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
@@ -301,7 +350,7 @@ export default function Home() {
               <h3 className="text-lg font-bold text-white">
                 Engineering Excellence
               </h3>
-              <p className="text-sm text-cloud-gray/60 leading-relaxed">
+              <p className="text-sm text-white/75 leading-relaxed">
                 The pursuit of the most elegant architectural path. 6x fewer
                 design defects than industry averages.
               </p>
@@ -309,9 +358,9 @@ export default function Home() {
 
             {/* Value 2 */}
             <div className="flex flex-col gap-3 text-center md:text-left">
-              <div className="mx-auto md:mx-0 w-10 h-10 rounded-brand bg-sky-cyan/15 flex items-center justify-center">
+              <div className="mx-auto md:mx-0 w-10 h-10 rounded-[12px] bg-white/20 flex items-center justify-center">
                 <svg
-                  className="w-5 h-5 text-sky-cyan"
+                  className="w-5 h-5 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
@@ -332,7 +381,7 @@ export default function Home() {
               <h3 className="text-lg font-bold text-white">
                 Strategic Transparency
               </h3>
-              <p className="text-sm text-cloud-gray/60 leading-relaxed">
+              <p className="text-sm text-white/75 leading-relaxed">
                 Our Anti-Black Hole governance ensures you&apos;re never more
                 than 14 days from tangible progress.
               </p>
@@ -340,9 +389,9 @@ export default function Home() {
 
             {/* Value 3 */}
             <div className="flex flex-col gap-3 text-center md:text-left">
-              <div className="mx-auto md:mx-0 w-10 h-10 rounded-brand bg-electric-indigo/15 flex items-center justify-center">
+              <div className="mx-auto md:mx-0 w-10 h-10 rounded-[12px] bg-white/20 flex items-center justify-center">
                 <svg
-                  className="w-5 h-5 text-electric-indigo"
+                  className="w-5 h-5 text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
@@ -358,7 +407,7 @@ export default function Home() {
               <h3 className="text-lg font-bold text-white">
                 Radical Adaptability
               </h3>
-              <p className="text-sm text-cloud-gray/60 leading-relaxed">
+              <p className="text-sm text-white/75 leading-relaxed">
                 Systems that evolve alongside market shifts, future-proofing
                 your product against volatility.
               </p>

@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-dark-navy/95 backdrop-blur-md border-b border-white/5"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#6855F0]/10"
       id="main-header"
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
@@ -33,9 +33,7 @@ export default function Header() {
               priority
             />
           </div>
-          <span className="brand-wordmark text-white text-lg tracking-widest">
-            {"LΛNGRΛT\\Λ"}
-          </span>
+          <span className="brand-wordmark text-[#0F172A] text-xl tracking-[0.18em]">LANGRATIA</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -44,7 +42,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-cloud-gray transition-colors duration-200 hover:text-white hover:opacity-100"
+              className="text-sm font-medium text-[#0F172A]/70 transition-colors duration-200 hover:text-[#6855F0]"
               id={`nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
             >
               {link.label}
@@ -52,8 +50,9 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="gradient-action rounded-brand px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary-purple/25 hover:opacity-100 hover:scale-[1.02]"
+            className="rounded-[12px] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
             id="nav-cta"
+            style={{ background: "linear-gradient(135deg, #6855F0 0%, #29B5F6 100%)", boxShadow: "0 4px 16px rgba(104,85,240,0.25)" }}
           >
             Get Started
           </Link>
@@ -68,17 +67,17 @@ export default function Header() {
           id="mobile-menu-toggle"
         >
           <span
-            className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+            className={`block h-0.5 w-6 bg-[#0F172A] transition-all duration-300 ${
               mobileMenuOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+            className={`block h-0.5 w-6 bg-[#0F172A] transition-all duration-300 ${
               mobileMenuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-white transition-all duration-300 ${
+            className={`block h-0.5 w-6 bg-[#0F172A] transition-all duration-300 ${
               mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
@@ -92,12 +91,12 @@ export default function Header() {
         }`}
         id="mobile-menu"
       >
-        <div className="px-6 pb-6 pt-2 flex flex-col gap-3 border-t border-white/5">
+        <div className="px-6 pb-6 pt-2 flex flex-col gap-3 border-t border-[#6855F0]/10 bg-white">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-base font-medium text-cloud-gray py-2 transition-colors duration-200 hover:text-white"
+              className="text-base font-medium text-[#0F172A]/70 py-2 transition-colors duration-200 hover:text-[#6855F0]"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.label}
@@ -105,8 +104,9 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="gradient-action rounded-brand px-5 py-3 text-center text-sm font-semibold text-white mt-2 transition-all duration-300 hover:shadow-lg hover:shadow-primary-purple/25"
+            className="rounded-[12px] px-5 py-3 text-center text-sm font-semibold text-white mt-2 transition-all duration-300 hover:shadow-lg"
             onClick={() => setMobileMenuOpen(false)}
+            style={{ background: "linear-gradient(135deg, #6855F0 0%, #29B5F6 100%)" }}
           >
             Get Started
           </Link>

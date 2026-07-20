@@ -179,8 +179,11 @@ export default function ROIPage() {
                 {/* Optimized State — Electric Indigo */}
                 <div className="flex flex-col gap-1.5">
                   <div className="flex justify-between text-xs">
-                    <span className="text-electric-indigo font-semibold">
-                      {"LΛNGRΛT\\Λ"} Optimized
+                    <span className="text-electric-indigo font-semibold flex items-center gap-1.5">
+                      <svg viewBox="0 0 160 24" className="h-3 w-auto fill-electric-indigo" xmlns="http://www.w3.org/2000/svg" aria-label="Langratia">
+                        <text x="0" y="18" fontFamily="var(--font-brand)" fontWeight="700" fontSize="20" letterSpacing="0.15em">LΛNGRΛT\Λ</text>
+                      </svg>
+                      Optimized
                     </span>
                     <span className="text-white/60">
                       {fmt(annualWastedCost - annualSavings)} / yr

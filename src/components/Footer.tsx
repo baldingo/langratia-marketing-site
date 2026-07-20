@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-navy text-cloud-gray border-t border-white/5" id="main-footer">
+    <footer className="bg-dark-navy text-white/80 border-t border-white/5" id="main-footer">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           {/* Brand */}
@@ -17,11 +17,9 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <span className="brand-wordmark text-white text-base">
-                {"LΛNGRΛT\\Λ"}
-              </span>
+              <span className="brand-wordmark text-white text-base tracking-[0.18em]">LANGRATIA</span>
             </div>
-            <p className="text-sm leading-relaxed text-cloud-gray/70">
+            <p className="text-sm leading-relaxed text-white/70">
               Custom software built for your exact scale. Grace is the radical
               elimination of the unnecessary.
             </p>
@@ -49,10 +47,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-white/5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-cloud-gray/50">
+          <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} Langratia. All rights reserved.
           </p>
-          <p className="text-xs text-cloud-gray/40">
+          <p className="text-xs text-white/40">
             Engineering Excellence &middot; Strategic Transparency &middot; Radical Adaptability
           </p>
         </div>
