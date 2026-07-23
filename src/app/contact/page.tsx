@@ -8,12 +8,21 @@ export default function ContactPage() {
     name: "",
     email: "",
     company: "",
-    tier: "",
+    tier: "smb",
     message: "",
+    ndaRequired: true,
   });
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) {
+    const { name, value, type } = e.target;
+    if (type === "checkbox") {
+      const checked = (e.target as HTMLInputElement).checked;
+      setForm({ ...form, [name]: checked });
+    } else {
+      setForm({ ...form, [name]: value });
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -24,140 +33,166 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-dark-navy py-20 sm:py-28" id="contact-hero">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-electric-indigo mb-4">
-            Get In Touch
+      <section className="bg-[#F8FAFC] border-b border-[#E2E8F0] py-20 sm:py-28 text-[#1E1548] relative overflow-hidden" id="contact-hero">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#6855F0]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center relative z-10">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#6855F0] bg-[#6855F0]/10 px-3.5 py-1 rounded-full inline-block mb-4">
+            Zero Risk &middot; 48-Hour SLA Guarantee
           </p>
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl mb-6">
+          <h1 className="text-4xl font-extrabold tracking-tight text-[#1E1548] sm:text-6xl mb-6">
             Let&apos;s Build Something Elegant
           </h1>
-          <p className="max-w-xl mx-auto text-lg text-cloud-gray/70 leading-relaxed">
-            Tell us about your project. We&apos;ll review your message and
-            send back a scoped proposal within 48 hours.
+          <p className="max-w-2xl mx-auto text-lg text-[#1E1548]/70 leading-relaxed">
+            Tell us about your project vision. Our senior architects will analyze your requirements and return a custom architectural proposal within 48 hours.
           </p>
         </div>
       </section>
 
-      {/* Form */}
-      <section className="bg-white py-20" id="contact-form-section">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          {submitted ? (
-            <div className="text-center py-20 flex flex-col items-center gap-6">
-              <div className="w-16 h-16 rounded-full gradient-action flex items-center justify-center">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                </svg>
+      {/* Form Section */}
+      <section className="bg-[#F8FAFC] py-20" id="contact-form-section">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#E2E8F0] shadow-2xl">
+            {submitted ? (
+              <div className="text-center py-16 flex flex-col items-center gap-6">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6855F0] to-[#29B5F6] flex items-center justify-center shadow-lg">
+                  <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
+                <h2 className="text-3xl font-extrabold text-[#1E1548]">Proposal Request Received</h2>
+                <p className="text-[#1E1548]/60 max-w-md leading-relaxed text-sm sm:text-base">
+                  Thank you for sharing your project parameters, <strong>{form.name}</strong>. Our engineering team is reviewing your requirements and will reach out within 48 hours.
+                </p>
+                {form.ndaRequired && (
+                  <div className="mt-2 p-3 bg-[#F5F3FF] border border-[#6855F0]/20 rounded-xl text-xs text-[#6855F0] font-semibold">
+                    &check; Mutual NDA protocol active. Your project details are fully protected.
+                  </div>
+                )}
               </div>
-              <h2 className="text-2xl font-bold text-dark-navy">Message Received</h2>
-              <p className="text-dark-navy/60 max-w-md leading-relaxed">
-                Thank you for reaching out. Our team will review your project
-                details and respond within 48 hours with a tailored proposal.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6" id="contact-form">
-              {/* Name & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-8" id="contact-form">
+                <div className="border-b border-[#E2E8F0] pb-4 flex items-center justify-between">
+                  <div>
+                    <h2 className="text-2xl font-extrabold text-[#1E1548]">Project Scoping Form</h2>
+                    <p className="text-xs text-[#1E1548]/50">Fill out your parameters to receive a structured scope review.</p>
+                  </div>
+                  <span className="text-xs font-bold text-[#6855F0] bg-[#6855F0]/10 px-3 py-1 rounded-full">
+                    48h Guaranteed SLA
+                  </span>
+                </div>
+
+                {/* Name & Email */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-[#1E1548]/80">
+                      Full Name <span className="text-[#6855F0]">*</span>
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={handleChange}
+                      placeholder="Jane Smith"
+                      className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-[#1E1548] text-sm outline-none transition-all duration-200 focus:border-[#6855F0] focus:ring-2 focus:ring-[#6855F0]/20 focus:bg-white placeholder:text-[#1E1548]/30"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-[#1E1548]/80">
+                      Work Email <span className="text-[#6855F0]">*</span>
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="jane@company.com"
+                      className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-[#1E1548] text-sm outline-none transition-all duration-200 focus:border-[#6855F0] focus:ring-2 focus:ring-[#6855F0]/20 focus:bg-white placeholder:text-[#1E1548]/30"
+                    />
+                  </div>
+                </div>
+
+                {/* Company & Tier */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="company" className="text-xs font-bold uppercase tracking-wider text-[#1E1548]/80">
+                      Company / Organization Name
+                    </label>
+                    <input
+                      id="company"
+                      name="company"
+                      type="text"
+                      value={form.company}
+                      onChange={handleChange}
+                      placeholder="Acme Corp"
+                      className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-[#1E1548] text-sm outline-none transition-all duration-200 focus:border-[#6855F0] focus:ring-2 focus:ring-[#6855F0]/20 focus:bg-white placeholder:text-[#1E1548]/30"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="tier" className="text-xs font-bold uppercase tracking-wider text-[#1E1548]/80">
+                      Target Project Pipeline <span className="text-[#6855F0]">*</span>
+                    </label>
+                    <select
+                      id="tier"
+                      name="tier"
+                      value={form.tier}
+                      onChange={handleChange}
+                      className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-[#1E1548] text-sm outline-none transition-all duration-200 focus:border-[#6855F0] focus:ring-2 focus:ring-[#6855F0]/20 focus:bg-white"
+                    >
+                      <option value="creator">Tier I: Creator Launchpad ($1,500 14-Day MVP)</option>
+                      <option value="smb">Tier II: SMB Systems Hub (Custom Platforms &amp; Payments)</option>
+                      <option value="enterprise">Tier III: Enterprise Gateway (Dedicated Senior Team)</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Message */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm font-semibold text-dark-navy">
-                    Full Name <span className="text-primary-purple">*</span>
+                  <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-[#1E1548]/80">
+                    Project Requirements &amp; Goals <span className="text-[#6855F0]">*</span>
                   </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
                     required
-                    value={form.name}
+                    value={form.message}
                     onChange={handleChange}
-                    placeholder="Jane Smith"
-                    className="rounded-brand border border-cloud-gray bg-white px-4 py-3 text-dark-navy text-sm outline-none transition-all duration-200 focus:border-primary-purple focus:ring-2 focus:ring-primary-purple/20 placeholder:text-dark-navy/30"
+                    placeholder="Describe your system vision, timeline, target features, or existing technical debt..."
+                    className="rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] px-4 py-3 text-[#1E1548] text-sm outline-none transition-all duration-200 focus:border-[#6855F0] focus:ring-2 focus:ring-[#6855F0]/20 focus:bg-white placeholder:text-[#1E1548]/30"
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm font-semibold text-dark-navy">
-                    Work Email <span className="text-primary-purple">*</span>
-                  </label>
+
+                {/* NDA Toggle Checkbox */}
+                <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0]">
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={form.email}
+                    id="ndaRequired"
+                    name="ndaRequired"
+                    type="checkbox"
+                    checked={form.ndaRequired}
                     onChange={handleChange}
-                    placeholder="jane@company.com"
-                    className="rounded-brand border border-cloud-gray bg-white px-4 py-3 text-dark-navy text-sm outline-none transition-all duration-200 focus:border-primary-purple focus:ring-2 focus:ring-primary-purple/20 placeholder:text-dark-navy/30"
+                    className="w-4 h-4 rounded text-[#6855F0] focus:ring-[#6855F0] cursor-pointer"
                   />
+                  <label htmlFor="ndaRequired" className="text-xs text-[#1E1548]/80 font-medium cursor-pointer">
+                    <span className="font-bold text-[#1E1548]">Request Mutual Non-Disclosure Agreement (NDA)</span>
+                    <span className="block text-[#1E1548]/50">We will execute a standard mutual NDA before reviewing confidential project code or data.</span>
+                  </label>
                 </div>
-              </div>
 
-              {/* Company */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="company" className="text-sm font-semibold text-dark-navy">
-                  Company / Project Name
-                </label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  value={form.company}
-                  onChange={handleChange}
-                  placeholder="Acme Inc."
-                  className="rounded-brand border border-cloud-gray bg-white px-4 py-3 text-dark-navy text-sm outline-none transition-all duration-200 focus:border-primary-purple focus:ring-2 focus:ring-primary-purple/20 placeholder:text-dark-navy/30"
-                />
-              </div>
-
-              {/* Tier Select */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="tier" className="text-sm font-semibold text-dark-navy">
-                  Which service are you interested in? <span className="text-primary-purple">*</span>
-                </label>
-                <select
-                  id="tier"
-                  name="tier"
-                  required
-                  value={form.tier}
-                  onChange={handleChange}
-                  className="rounded-brand border border-cloud-gray bg-white px-4 py-3 text-dark-navy text-sm outline-none transition-all duration-200 focus:border-primary-purple focus:ring-2 focus:ring-primary-purple/20"
+                {/* Submit button */}
+                <button
+                  type="submit"
+                  className="rounded-xl px-8 py-4 text-base font-bold text-white transition-all duration-300 hover:shadow-xl hover:scale-[1.01] text-center"
+                  style={{ background: "linear-gradient(135deg, #6855F0 0%, #29B5F6 100%)" }}
                 >
-                  <option value="" disabled>Select a service tier</option>
-                  <option value="creator">Creator Launchpad — MVP in 14 Days</option>
-                  <option value="smb">SMB Systems Hub — Custom Business Systems</option>
-                  <option value="enterprise">Enterprise Gateway — Dedicated Capacity</option>
-                  <option value="other">Not Sure / Exploratory</option>
-                </select>
-              </div>
-
-              {/* Message */}
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm font-semibold text-dark-navy">
-                  Tell us about your project <span className="text-primary-purple">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={6}
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Describe your project, current challenges, and what success looks like for you..."
-                  className="rounded-brand border border-cloud-gray bg-white px-4 py-3 text-dark-navy text-sm outline-none resize-none transition-all duration-200 focus:border-primary-purple focus:ring-2 focus:ring-primary-purple/20 placeholder:text-dark-navy/30"
-                />
-              </div>
-
-              {/* Submit */}
-              <button
-                type="submit"
-                id="contact-submit"
-                className="gradient-action rounded-brand-lg px-8 py-4 text-base font-semibold text-white text-center transition-all duration-300 hover:shadow-xl hover:shadow-primary-purple/30 hover:scale-[1.02] cursor-pointer"
-              >
-                Send Project Brief
-              </button>
-              <p className="text-xs text-center text-dark-navy/40">
-                We&apos;ll respond within 48 hours with a tailored proposal.
-              </p>
-            </form>
-          )}
+                  Submit Proposal Request &rarr;
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </section>
     </>

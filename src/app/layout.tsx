@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Nunito, Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TopProgressBar from "@/components/TopProgressBar";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -50,8 +52,11 @@ export default function RootLayout({
       className={`${nunito.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Suspense fallback={null}>
+          <TopProgressBar />
+        </Suspense>
         <Header />
-        <main className="flex-1 pt-[72px]">{children}</main>
+        <main className="flex-1 pt-[60px]">{children}</main>
         <Footer />
       </body>
     </html>

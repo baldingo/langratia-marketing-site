@@ -10,7 +10,7 @@
   --primary-purple: #6855F0;     /* purple arm of the pinwheel */
   --electric-indigo: #8B74F8;    /* lighter violet accent */
   --sky-cyan: #29B5F6;           /* cyan/blue arm of the pinwheel */
-  --dark-navy: #0F172A;
+  --brand-indigo: #1E1548;
   --cloud-gray: #E2E8F0;
   --deep-cyan: #0EA5E9;          /* deeper sky blue */
 
@@ -26,7 +26,7 @@
 
   /* — Backgrounds — */
   --background: #FFFFFF;
-  --foreground: var(--dark-navy);
+  --foreground: var(--brand-indigo);
 }
 
 /* — Tailwind v4 Theme Extension — */
@@ -35,11 +35,11 @@
   --color-primary-purple: #6855F0;
   --color-electric-indigo: #8B74F8;
   --color-sky-cyan: #29B5F6;
-  --color-dark-navy: #0F172A;
+  --color-brand-indigo: #1E1548;
   --color-cloud-gray: #E2E8F0;
   --color-deep-cyan: #0EA5E9;
   --color-background: #FFFFFF;
-  --color-foreground: #0F172A;
+  --color-foreground: #1E1548;
 
   /* Border Radius */
   --radius-brand: 12px;
@@ -55,7 +55,7 @@
    ============================================================ */
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -133,19 +133,11 @@ a:hover {
 }
 
 /* ============================================================
-   FOOTER — Force white text on dark background
+   FOOTER
    ============================================================ */
 
-#main-footer,
-#main-footer a,
-#main-footer p,
-#main-footer span,
-#main-footer h4 {
-  color: rgba(255, 255, 255, 0.75);
-}
-
 #main-footer a:hover {
-  color: #ffffff;
+  color: #6855F0;
   opacity: 1;
 }
 
