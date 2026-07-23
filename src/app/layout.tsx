@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Nunito, Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -128,6 +129,22 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className="min-h-full flex flex-col">
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-M7KLVFJ0MD"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-M7KLVFJ0MD');
+            `,
+          }}
+        />
         <Header />
         <main className="flex-1 pt-[60px]">{children}</main>
         <Footer />
