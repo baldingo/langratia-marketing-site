@@ -90,7 +90,7 @@ export default function TrustBadges() {
                 onMouseLeave={() => setActiveBadge(null)}
                 className="relative group flex items-center gap-3 py-2 px-3.5 rounded-xl bg-white border border-[#E2E8F0] shadow-sm transition-all duration-300 hover:bg-[#F1F5F9] hover:border-[#6855F0]/40 cursor-default"
               >
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#6855F0] to-[#29B5F6] flex items-center justify-center text-white flex-shrink-0 shadow-md">
+                <div className="w-9 h-9 rounded-lg bg-[#6855F0] flex items-center justify-center text-white flex-shrink-0 shadow-md">
                   {badge.icon}
                 </div>
                 <div className="flex flex-col">

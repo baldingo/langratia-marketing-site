@@ -14,12 +14,6 @@
   --cloud-gray: #E2E8F0;
   --deep-cyan: #0EA5E9;          /* deeper sky blue */
 
-  /* — Functional Gradients — */
-  --gradient-action: linear-gradient(135deg, var(--primary-purple), var(--sky-cyan));
-  --gradient-data: linear-gradient(135deg, var(--sky-cyan), var(--deep-cyan));
-  --gradient-depth: linear-gradient(135deg, #FFFFFF, var(--cloud-gray));
-  --gradient-brand: linear-gradient(135deg, var(--primary-purple), var(--electric-indigo), var(--sky-cyan));
-
   /* — Brand Radii — */
   --radius-brand: 12px;
   --radius-brand-lg: 16px;
@@ -82,22 +76,6 @@ input,
 select,
 textarea {
   border-radius: var(--radius-brand);
-}
-
-/* ============================================================
-   GRADIENT UTILITIES
-   ============================================================ */
-
-.gradient-action {
-  background: var(--gradient-action);
-}
-
-.gradient-data {
-  background: var(--gradient-data);
-}
-
-.gradient-depth {
-  background: var(--gradient-depth);
 }
 
 /* ============================================================

@@ -36,7 +36,7 @@ export default function Footer() {
               <div className="relative w-8 h-8 rounded-xl overflow-hidden shadow-md">
                 <Image
                   src="/logo.png"
-                  alt="Langratia logo"
+                  alt="Langratia Custom Software Engineering Studio Logo"
                   fill
                   className="object-contain"
                 />
@@ -44,11 +44,17 @@ export default function Footer() {
               <span className="brand-wordmark text-[#1E1548] text-lg tracking-[0.18em]">LANGRATIA</span>
             </div>
             <p className="text-xs leading-relaxed text-[#1E1548]/70">
-              LANGRATIA is a global software engineering firm building high-precision custom architecture for founders, SMBs, and enterprise institutions worldwide. Grace is the radical elimination of the unnecessary.
+              LANGRATIA is a global software engineering firm building high-precision custom architecture for founders, SMBs, and enterprise institutions across Uganda, East Africa, North America, Europe, and worldwide.
             </p>
-            <div className="flex items-center gap-3 text-xs text-[#1E1548]/50 pt-2">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#29B5F6]" />
-              <span>Global Remote Engineering Operations</span>
+            <div className="flex flex-col gap-1 text-xs text-[#1E1548]/60 pt-2">
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-[#29B5F6]" />
+                <span className="font-semibold text-[#1E1548]">HQ: Kampala, Uganda (East Africa Hub)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-2 h-2 rounded-full bg-[#6855F0]" />
+                <span>Global Distributed Engineering Operations</span>
+              </div>
             </div>
           </div>
 
@@ -56,8 +62,11 @@ export default function Footer() {
           <div className="flex flex-wrap gap-12 sm:gap-16">
             <div className="flex flex-col gap-3">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E1548]/50">
-                Delivery Tiers
+                Services &amp; Tiers
               </h4>
+              <Link href="/services" className="text-xs font-semibold text-[#6855F0] hover:underline transition-colors duration-200">
+                All Engineering Services &rarr;
+              </Link>
               <Link href="/creators" className="text-xs hover:text-[#6855F0] transition-colors duration-200">
                 Tier I: Creator Launchpad
               </Link>

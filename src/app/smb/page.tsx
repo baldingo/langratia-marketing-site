@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
-  title: "SMB Systems Hub — Langratia",
+export const metadata: Metadata = {
+  title: "Tier II: SMB Systems Hub | Custom Business Software Engineering | Langratia",
   description:
-    "Custom digital systems for businesses scaling from 10 to 100 employees. E-commerce, mobile money integrations, and real-time inventory built on predictable frameworks.",
+    "Custom operating platforms, Mobile Money & e-commerce integrations, and workflow automation for growing SMBs in Uganda, East Africa, and international markets.",
+  keywords: [
+    "custom business software Uganda",
+    "mobile money API integration Kampala",
+    "e-commerce platform development East Africa",
+    "SMB software engineering firm",
+    "business automation systems Uganda",
+  ],
 };
 
 const services = [

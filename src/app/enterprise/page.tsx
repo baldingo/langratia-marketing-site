@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Enterprise Infrastructure Gateway — Langratia",
+export const metadata: Metadata = {
+  title: "Tier III: Enterprise Gateway | Enterprise Software Engineering | Langratia",
   description:
-    "Dedicated engineering capacity for institutions requiring long-term stability, total data control, and deep integration. SOC 2 and ISO 27001 compliant.",
+    "Dedicated software engineering capacity, microservices, cloud infrastructure, and SOC 2 / ISO 27001 readiness for enterprise institutions in Uganda, East Africa, and globally.",
+  keywords: [
+    "enterprise software development Uganda",
+    "cloud architecture firm Kampala",
+    "SOC 2 compliant developers Africa",
+    "fintech infrastructure East Africa",
+    "custom ERP software development",
+  ],
 };
 
 const capabilities = [

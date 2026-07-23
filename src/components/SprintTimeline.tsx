@@ -139,14 +139,14 @@ export default function SprintTimeline() {
         </div>
 
         {/* Selected Step Detail Panel */}
-        <div className="rounded-3xl bg-gradient-to-br from-[#F8FAFC] via-[#EEF2FF] to-white text-[#1E1548] p-8 md:p-12 shadow-2xl border border-[#6855F0]/20 relative overflow-hidden">
+        <div className="rounded-3xl bg-[#F8FAFC] text-[#1E1548] p-8 md:p-12 shadow-2xl border border-[#E2E8F0] relative overflow-hidden">
           {/* Ambient decorative glow */}
           <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#6855F0]/10 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 flex flex-col gap-6">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#6855F0] to-[#29B5F6] flex items-center justify-center text-white shadow-lg">
+                <div className="w-12 h-12 rounded-xl bg-[#6855F0] flex items-center justify-center text-white shadow-md">
                   {steps[activeStep].icon}
                 </div>
                 <div>

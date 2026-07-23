@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Creator Launchpad — Langratia",
+export const metadata: Metadata = {
+  title: "Tier I: Creator Launchpad | 14-Day MVP Development | Langratia",
   description:
-    "Launch your MVP in 14 days. A high-velocity, productized software service for founders and creators who need to validate fast and build smart.",
+    "Launch your startup MVP in 14 days with production-ready architecture. Specialized for tech founders in Uganda, East Africa, and globally with zero tech debt.",
+  keywords: [
+    "MVP development agency Uganda",
+    "startup software development Kampala",
+    "rapid MVP builder East Africa",
+    "14 day software sprint",
+    "founder tech partner Uganda",
+  ],
 };
 
 export default function CreatorsPage() {

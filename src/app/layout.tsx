@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Nunito, Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import TopProgressBar from "@/components/TopProgressBar";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -21,23 +20,92 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Langratia — Custom Software Built for Your Exact Scale",
+  metadataBase: new URL("https://langratia.com"),
+  title: {
+    default: "Langratia — Custom Software Engineering Studio | Uganda, East Africa & Global",
+    template: "%s | Langratia — Software Engineering",
+  },
   description:
-    "Langratia is a premium custom software engineering firm delivering enterprise-grade architecture with the agility of a startup. Engineering Excellence. Strategic Transparency. Radical Adaptability.",
+    "Langratia is a premier software engineering studio delivering custom enterprise architecture, high-scale web & mobile applications, and MVP development. Headquartered in Kampala, Uganda, powering businesses across East Africa and worldwide with radical transparency.",
+  applicationName: "Langratia",
+  authors: [{ name: "Langratia Engineering Team", url: "https://langratia.com" }],
+  generator: "Next.js",
   keywords: [
-    "custom software development",
-    "enterprise software",
-    "MVP development",
-    "software engineering",
-    "Langratia",
+    // Uganda & East Africa SEO Keywords
+    "software development agency Uganda",
+    "software engineering firm Kampala",
+    "custom software development Uganda",
+    "web development company Kampala",
+    "mobile app developers Uganda",
+    "tech company Kampala East Africa",
+    "software engineers in Kampala",
+    "Uganda software development firm",
+    "East Africa tech developers",
+    "software engineering studio East Africa",
+
+    // Global & Enterprise SEO Keywords
+    "custom software development company",
+    "enterprise software engineering studio",
+    "startup MVP development agency",
+    "cloud native software architecture",
+    "anti black hole sprint methodology",
+    "fullstack TypeScript engineers",
+    "offshore custom software development",
+    "Langratia software studio",
+    "Langratia engineering",
   ],
+  referrer: "origin-when-cross-origin",
+  creator: "Langratia Software Engineering Studio",
+  publisher: "Langratia",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "./",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "Langratia — Custom Software Built for Your Exact Scale",
     description:
-      "Premium custom software engineering. Enterprise-grade architecture with startup agility.",
-    type: "website",
+      "Premier custom software engineering studio headquartered in Kampala, Uganda, serving East Africa and global enterprises. Enterprise-grade architecture with 14-day anti-black hole sprint delivery.",
+    url: "https://langratia.com",
+    siteName: "Langratia Software Engineering Studio",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Langratia — Custom Software Engineering Studio Uganda & Worldwide",
+      },
+    ],
     locale: "en_US",
-    siteName: "Langratia",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Langratia — Custom Software Engineering Studio | Uganda & Global",
+    description:
+      "Enterprise architecture, custom app engineering, and startup MVPs. Serving Uganda, East Africa, and worldwide.",
+    images: ["/logo.png"],
+    creator: "@langratia",
+  },
+  other: {
+    "geo.region": "UG-C",
+    "geo.placename": "Kampala, Uganda",
+    "geo.position": "0.3476;32.5825",
+    ICBM: "0.3476, 32.5825",
   },
 };
 
@@ -51,10 +119,10 @@ export default function RootLayout({
       lang="en"
       className={`${nunito.variable} ${montserrat.variable} h-full antialiased`}
     >
+      <head>
+        <JsonLd />
+      </head>
       <body className="min-h-full flex flex-col">
-        <Suspense fallback={null}>
-          <TopProgressBar />
-        </Suspense>
         <Header />
         <main className="flex-1 pt-[60px]">{children}</main>
         <Footer />

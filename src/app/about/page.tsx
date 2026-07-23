@@ -1,10 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "About Us & Engineering Philosophy — Langratia",
+export const metadata: Metadata = {
+  title: "About Us & Software Engineering Discipline | Langratia",
   description:
-    "Discover Langratia's software engineering discipline. Built on 14-day Anti-Black Hole sprints, senior architect ownership, and zero-compromise risk governance.",
+    "Discover Langratia's engineering governance. Based in Kampala, Uganda, serving global enterprises with 14-day anti-black hole sprints, senior architect ownership, and zero-compromise security.",
+  keywords: [
+    "software engineering philosophy Uganda",
+    "top software company Kampala",
+    "anti black hole software methodology",
+    "software development firm East Africa",
+    "senior software architects Kampala",
+  ],
 };
 
 const corePrinciples = [
