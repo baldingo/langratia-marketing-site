@@ -127,8 +127,6 @@ export default function RootLayout({
     >
       <head>
         <JsonLd />
-      </head>
-      <body className="min-h-full flex flex-col">
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-M7KLVFJ0MD"
@@ -145,6 +143,8 @@ export default function RootLayout({
             `,
           }}
         />
+      </head>
+      <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1 pt-[60px]">{children}</main>
         <Footer />
