@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   applicationName: "Langratia",
   authors: [{ name: "Langratia Engineering Team", url: "https://langratia.com" }],
   generator: "Next.js",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   keywords: [
     // Uganda & East Africa SEO Keywords
     "software development agency Uganda",
