@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Langratia"
+version = "1.0.0"
+id = "artifacts/langratia"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24568
+
+[services.development]
+run = "pnpm --filter @workspace/langratia run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/langratia", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/langratia/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24568"
+BASE_PATH = "/"

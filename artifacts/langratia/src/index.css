@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   LANGRATIA DESIGN SYSTEM
+   Brand tokens, gradients, typography, and global rules
+   ============================================================ */
+
+:root {
+  /* — Brand Colors — */
+  --primary-purple: #6855F0;
+  --electric-indigo: #8B74F8;
+  --sky-cyan: #29B5F6;
+  --brand-indigo: #1E1548;
+  --cloud-gray: #E2E8F0;
+  --deep-cyan: #0EA5E9;
+
+  /* — Brand Radii — */
+  --radius-brand: 12px;
+  --radius-brand-lg: 16px;
+
+  /* — Backgrounds — */
+  --background: #FFFFFF;
+  --foreground: var(--brand-indigo);
+}
+
+/* — Tailwind v4 Theme Extension — */
+@theme {
+  --color-primary-purple: #6855F0;
+  --color-electric-indigo: #8B74F8;
+  --color-sky-cyan: #29B5F6;
+  --color-brand-indigo: #1E1548;
+  --color-cloud-gray: #E2E8F0;
+  --color-deep-cyan: #0EA5E9;
+  --color-background: #FFFFFF;
+  --color-foreground: #1E1548;
+
+  --radius-brand: 12px;
+  --radius-brand-lg: 16px;
+
+  --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+  --font-brand: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-brand), 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ============================================================
+   GLOBAL COMPONENT RULES
+   ============================================================ */
+
+button,
+[role="button"],
+input,
+select,
+textarea {
+  border-radius: var(--radius-brand);
+}
+
+/* ============================================================
+   BRAND WORDMARK UTILITY
+   ============================================================ */
+
+.brand-wordmark {
+  font-family: var(--font-brand), 'Inter', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   GRADIENT UTILITY
+   ============================================================ */
+
+.gradient-action {
+  background: linear-gradient(135deg, #6855F0 0%, #29B5F6 100%);
+}
+
+/* ============================================================
+   LINK STYLES
+   ============================================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+/* Header link hover */
+#main-header a:hover {
+  color: #6855F0;
+  opacity: 1;
+}
+
+/* Footer link hover */
+#main-footer a:hover {
+  color: #6855F0;
+  opacity: 1;
+}
+
+/* ============================================================
+   SELECTION HIGHLIGHT
+   ============================================================ */
+
+::selection {
+  background: var(--primary-purple);
+  color: #FFFFFF;
+}
