@@ -93,6 +93,21 @@ export default function Footer() {
               </Link>
             </div>
 
+            <div className="flex flex-col gap-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E1548]/50">
+                Legal &amp; Support
+              </h4>
+              <Link href="/privacy" className="text-xs hover:text-[#6855F0] transition-colors duration-200">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-xs hover:text-[#6855F0] transition-colors duration-200">
+                Terms of Service
+              </Link>
+              <Link href="/faq" className="text-xs hover:text-[#6855F0] transition-colors duration-200">
+                Engineering FAQs
+              </Link>
+            </div>
+
             <div className="flex flex-col gap-3 max-w-xs">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E1548]/50">
                 Client SLA Guarantee

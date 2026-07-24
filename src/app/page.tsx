@@ -15,12 +15,7 @@ export default function Home() {
             
             {/* Left Column: Typography */}
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2.5 mb-8 px-4 py-1.5 rounded-full bg-white border border-[#E2E8F0] shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#6855F0]" />
-                <span className="text-xs font-bold uppercase tracking-widest text-[#1E1548]">
-                  Software Engineering Studio &middot; Kampala, Uganda &amp; Global
-                </span>
-              </div>
+
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tighter text-[#1E1548] leading-[1.05]">
                 Reliable Custom
